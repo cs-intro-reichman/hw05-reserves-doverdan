@@ -82,7 +82,6 @@ public class GameOfLife {
 			String line = in.readLine();
 			if (line != null) {
 				for (int j = 1; j <= line.length(); j++) {
-					// Assign 1 or 0 to board[i][j] based on the character at line.charAt(j - 1)
 					board[i][j] = (line.charAt(j - 1) == 'x') ? 1 : 0;
 				}
 			}
@@ -121,13 +120,18 @@ public class GameOfLife {
 		if (board[i][j] == 1) {
 			if (count < 2 || count > 3) {
 				return 0;
+			} else {
+				return 1;
 			}
-			return 1;
+		} else {
+			if (count == 3) {
+				return 1;
+			} else {
+				return 0;
+
+			}
 		}
-		if (board[i][j] == 0 && count == 3) {
-			return 1;
-		}
-		return 0;
+
 	}
 
 	// Counts and returns the number of living neighbors of the given cell
