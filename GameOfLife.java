@@ -153,9 +153,9 @@ public class GameOfLife {
 		// use the printf function while doing so
 		// to make the output look nice
 		// (i.e. use printf to print the board in a nice format)
-		for (int i = 1; i < arr.length - 1; i++) {
+		for (int p = 1; p < arr.length - 1; p++) {
 			for (int q = 1; q < arr[0].length - 1; q++) {
-				System.out.printf("%3d ", arr[i][q]);
+				System.out.printf("%3d", arr[p][q]);
 			}
 			System.out.println();
 		}
